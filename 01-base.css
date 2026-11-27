@@ -1,0 +1,39 @@
+/* AGROVERSE — เค้าโครง: เมนูข้างซ้าย + พื้นที่ทำงาน (มือถือใช้แถบเมนูล่าง) โทนเขียวป่าเข้ม สีเน้นมะนาว */
+:root {
+  --bg: #0a1410; --surface: #101d17; --surface2: #162a21; --line: #22382d; --fg: #e7f0e3; --muted: #8da496;
+  --accent: #c5f03c; --accent-ink: #11200a; --accent-a: rgba(197, 240, 60, .22); --accent-text: #c5f03c;
+  --good: #58d18a; --warn: #f1b94a; --bad: #ff6f61; --info: #6bb6ff; --grid: rgba(255, 255, 255, .06); --map-bg: #0d1d16;
+  --c1: #c5f03c; --c2: #4fd1c5; --c3: #f1b94a; --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  --f-head: 'Bai Jamjuree', 'IBM Plex Sans Thai', system-ui, sans-serif; --f-body: 'IBM Plex Sans Thai', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #eef3ea; --surface: #ffffff; --surface2: #f3f7ef; --line: #d8e2d0; --fg: #14231b; --muted: #566b5e;
+    --accent: #b6e32f; --accent-ink: #14230a; --accent-a: rgba(120, 170, 10, .2); --accent-text: #3f6b00;
+    --good: #1f8f55; --warn: #a56a00; --bad: #c9372c; --info: #1f6fc4; --grid: rgba(0, 0, 0, .07); --map-bg: #e4ecdc;
+    --c1: #6a9d0c; --c2: #17877d; --c3: #c07f00; --shadow: 0 8px 24px rgba(30, 60, 30, .12); color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #eef3ea; --surface: #ffffff; --surface2: #f3f7ef; --line: #d8e2d0; --fg: #14231b; --muted: #566b5e;
+  --accent: #b6e32f; --accent-ink: #14230a; --accent-a: rgba(120, 170, 10, .2); --accent-text: #3f6b00;
+  --good: #1f8f55; --warn: #a56a00; --bad: #c9372c; --info: #1f6fc4; --grid: rgba(0, 0, 0, .07); --map-bg: #e4ecdc;
+  --c1: #6a9d0c; --c2: #17877d; --c3: #c07f00; --shadow: 0 8px 24px rgba(30, 60, 30, .12); color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.6 var(--f-body); -webkit-text-size-adjust: 100%; }
+body.gps-open, body.m-open { overflow: hidden; }
+h1, h2, h3 { font-family: var(--f-head); margin: 0; line-height: 1.25; text-wrap: balance; }
+h1 { font-size: clamp(1.45rem, 3.2vw, 2rem); font-weight: 700; } h2 { font-size: 1.08rem; font-weight: 600; } h3 { font-size: .95rem; margin: 16px 0 8px; }
+p { margin: 0 0 8px; } small { color: var(--muted); font-size: .8em; } a { color: var(--accent-text); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+.mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: .9em; word-break: break-all; }
+.muted { color: var(--muted); } .sm { font-size: .86rem; } .r { text-align: right; } .c { justify-content: center; } .end { justify-content: flex-end; } .pad { padding: 20px; }
+.ic { width: 1.2em; height: 1.2em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; vertical-align: -.2em; }
+.ic.fill { fill: currentColor; } .okc { color: var(--good); } .dash { color: var(--muted); }
+.logo { width: 30px; height: 30px; flex: none; }
+.eyebrow { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-text); font-weight: 600; margin-bottom: 4px; }
+.lead { color: var(--muted); font-size: 1.02rem; max-width: 56ch; }
