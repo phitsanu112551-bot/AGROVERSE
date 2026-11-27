@@ -1,0 +1,5 @@
+/* ---------- AGRO AI ---------- */
+.chat { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; } .q { align-self: flex-end; background: var(--accent); color: var(--accent-ink); padding: 9px 14px; border-radius: 16px 16px 4px 16px; max-width: 85%; font-weight: 500; }
+.ans { background: var(--surface); border: 1px solid var(--line); border-radius: 16px 16px 16px 4px; padding: 14px 16px; max-width: min(100%, 720px); } .ans.none { border-color: var(--warn); } .ans.bad { border-color: var(--bad); color: var(--bad); } .ans-h { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+.src { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 10px 0 0; padding-top: 10px; border-top: 1px dashed var(--line); font-size: .84rem; } .src dt { color: var(--muted); } .src dd { margin: 0; word-break: break-word; }
+.askbar { display: flex; gap: 8px; position: sticky; bottom: 76px; background: var(--bg); padding: 8px 0; } @media (min-width: 900px) { .askbar { bottom: 0; } }
