@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071710">
+  <title>AGROVERSE | Smart Agriculture</title>
+  <meta name="description" content="AGROVERSE แพลตฟอร์มเกษตรอัจฉริยะ">
+  <link rel="stylesheet" href="./app.css">
+  <style>
+    :root {
+      --bg: #071710;
+      --panel: #10251a;
+      --green: #37d67a;
+      --muted: #9bb3a3;
+      --white: #f1fff5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--white);
+      font-family: system-ui, sans-serif;
+    }
+    button { cursor: pointer; font: inherit; }
+    header {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 16px 5%;
+      background: #0b2016;
+      border-bottom: 1px solid #234331;
+      position: sticky; top: 0; z-index: 10;
+    }
+    .logo { font-size: 22px; font-weight: 800; color: var(--green); }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-size: 14px; }
+    nav a:hover { color: var(--green); }
+    main { max-width: 1200px; margin: auto; padding: 25px 18px; }
+    .hero {
+      padding: 35px 25px; border-radius: 20px;
+      background: linear-gradient(120deg,#153c27,#0c2418);
+      border: 1px solid #285b3c;
+    }
+    .hero h1 { font-size: clamp(28px,5vw,46px); margin: 0 0 10px; }
+    .hero p { color: #c0d9c8; }
+    .green { color: var(--green); }
+    .btn {
+      border: 0; border-radius: 10px;
+      padding: 11px 18px; background: var(--green);
+      color: #062012; font-weight: 700;
+    }
+    .btn.secondary {
+      background: #193b28; color: white;
+      border: 1px solid #386448;
+    }
+    h2 { margin-top: 32px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+      gap: 15px; margin-top: 16px;
+    }
+    .card {
+      padding: 20px; border-radius: 15px;
+      background: var(--panel);
+      border: 1px solid #254633;
+    }
+    .card h3 { margin: 5px 0 10px; }
+    .card p { color: var(--muted); font-size: 14px; }
+    .icon { font-size: 30px; }
+    .section { scroll-margin-top: 90px; }
+    .notice {
+      padding: 15px; border-radius: 12px;
+      background: #142c1e; color: #c5dfce;
+      margin-top: 18px;
+    }
+    input {
+      width: 100%; padding: 12px; margin: 8px 0;
+      background: #071710; border: 1px solid #42634d;
+      border-radius: 9px; color: white;
+    }
+    footer {
+      text-align: center; padding: 30px;
+      color: var(--muted); border-top: 1px solid #254633;
+      margin-top: 40px;
+    }
+    #toast {
+      position: fixed; bottom: 20px; left: 50%;
+      transform: translateX(-50%);
+      background: #245c38; color: white;
+      padding: 12px 20px; border-radius: 10px;
+      display: none; z-index: 20;
+    }
+    @media(max-width:600px) {
+      header { align-items: flex-start; flex-direction: column; gap: 12px; }
+      nav { gap: 12px; }
+      .hero { padding: 25px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🌱 AGROVERSE</div>
+  <nav>
+    <a href="#home">หน้าหลัก</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#agriculture">เกษตร</a>
+    <a href="#ai">Agro AI</a>
+    <a href="#gps">GPS</a>
+    <a href="#packages">แพ็กเกจ</a>
+    <a href="#payment">ชำระเงิน</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero section" id="home">
+    <p class="green">SMART AGRICULTURE PLATFORM</p>
+    <h1>เกษตรยุคใหม่<br><span class="green">เติบโตไปกับ AGROVERSE</span></h1>
+    <p>จัดการพื้นที่เกษตร วิเคราะห์ข้อมูล และวางแผนธุรกิจเกษตรในแพลตฟอร์มเดียว</p>
+    <button class="btn" onclick="go('dashboard')">เข้าสู่ระบบจัดการ</button>
+    <button class="btn secondary" onclick="go('agriculture')">สำรวจระบบ</button>
+  </section>
+
+  <section class="section" id="dashboard">
+    <h2>📊 Dashboard</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🌾</div>
+        <h3>พื้นที่เกษตร</h3>
+        <p>จัดการข้อมูลพื้นที่และแปลงเพาะปลูก</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌤️</div>
+        <h3>สภาพอากาศ</h3>
+        <p>เตรียมเชื่อมต่อข้อมูลพยากรณ์อากาศ</p>
+      </div>
+      <div class="card">
+        <div class="icon">💰</div>
+        <h3>การเงิน</h3>
+        <p>วางแผนต้นทุนและรายรับทางการเกษตร</p>
+      </div>
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>วิเคราะห์ผลผลิต</h3>
+        <p>เตรียมระบบติดตามและประเมินผลผลิต</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="agriculture">
+    <h2>🌱 ระบบจัดการเกษตร</h2>
+    <div class="grid">
+      <div class="card"><div class="icon">🌾</div><h3>พืชไร่และพืชสวน</h3><p>จัดการแปลงปลูกและผลผลิต</p></div>
+      <div class="card"><div class="icon">🍎</div><h3>ผลไม้</h3><p>บันทึกข้อมูลสวนและรอบเก็บเกี่ยว</p></div>
+      <div class="card"><div class="icon">🐄</div><h3>ปศุสัตว์</h3><p>จัดการข้อมูลสัตว์และฟาร์ม</p></div>
+      <div class="card"><div class="icon">🐟</div><h3>ประมง</h3><p>จัดการบ่อเลี้ยงและสัตว์น้ำ</p></div>
+      <div class="card"><div class="icon">🏡</div><h3>โรงเรือน</h3><p>จัดการพื้นที่และโครงสร้างเกษตร</p></div>
+      <div class="card"><div class="icon">🌳</div><h3>พื้นที่ว่าง</h3><p>วางแผนการใช้ประโยชน์ที่ดิน</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="ai">
+    <h2>🤖 AGRO AI</h2>
+    <div class="card">
+      <h3>ผู้ช่วยเกษตรอัจฉริยะ</h3>
+      <p>เตรียมเชื่อมต่อ AI เพื่อวิเคราะห์พืช โรคพืช และให้คำแนะนำทางการเกษตร</p>
+      <input id="question" placeholder="พิมพ์คำถามเกี่ยวกับการเกษตร">
+      <button class="btn" onclick="askAI()">ส่งคำถาม</button>
+      <p id="ai-result">ระบบ AI ยังไม่ได้เชื่อมต่อ API</p>
+    </div>
+  </section>
+
+  <section class="section" id="gps">
+    <h2>📍 Outdoor GPS & พื้นที่</h2>
+    <div class="card">
+      <h3>ระบบตำแหน่งแปลงเกษตร</h3>
+      <p>เตรียมเชื่อมต่อแผนที่ GPS และระบบวัดพื้นที่</p>
+      <button class="btn" onclick="getLocation()">ตรวจสอบตำแหน่งของฉัน</button>
+      <p id="location-result">ยังไม่ได้ตรวจสอบตำแหน่ง</p>
+    </div>
+  </section>
+
+  <section class="section" id="packages">
+    <h2>💎 แพ็กเกจ AGROVERSE</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>FREE</h3><h2 class="green">ฟรี</h2>
+        <p>ระบบพื้นฐานสำหรับเกษตรกร</p>
+        <button class="btn secondary" onclick="notify('เลือกแพ็กเกจ FREE')">เลือกแพ็กเกจ</button>
+      </div>
+      <div class="card">
+        <h3>PRO</h3><h2 class="green">PRO</h2>
+        <p>เครื่องมือวิเคราะห์และจัดการขั้นสูง</p>
+        <button class="btn" onclick="go('payment')">สมัคร PRO</button>
+      </div>
+      <div class="card">
+        <h3>PRO MAX</h3><h2 class="green">MAX</h2>
+        <p>สำหรับธุรกิจเกษตรและหลายพื้นที่</p>
+        <button class="btn" onclick="go('payment')">สมัคร PRO MAX</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="account">
+    <h2>👤 สมาชิก</h2>
+    <div class="card">
+      <input id="email" type="email" placeholder="อีเมล">
+      <input id="password" type="password" placeholder="รหัสผ่าน">
+      <button class="btn" onclick="notify('ระบบสมาชิกต้องเชื่อมต่อ Backend ก่อนใช้งาน')">เข้าสู่ระบบ</button>
+      <button class="btn secondary" onclick="notify('ระบบสมัครสมาชิกกำลังเตรียมเชื่อมต่อ')">สมัครสมาชิก</button>
+    </div>
+  </section>
+
+  <section class="section" id="payment">
+    <h2>💳 การชำระเงิน</h2>
+    <div class="card">
+      <h3>PromptPay / QR Payment</h3>
+      <p>รองรับการชำระเงินผ่านธนาคารไทย โดย QR พร้อมเพย์</p>
+      <div class="notice">พื้นที่แสดง QR Code จะเปิดใช้งานเมื่อเชื่อมระบบสร้าง QR จริง</div>
+      <h3>TrueMoney Wallet</h3>
+      <p>หมายเลข Wallet: 0909507195</p>
+      <button class="btn secondary" onclick="copyWallet()">คัดลอกเบอร์ Wallet</button>
+      <h3>ยืนยันการชำระเงิน</h3>
+      <input type="file" id="slip" accept="image/*">
+      <button class="btn" onclick="notify('ระบบตรวจสอบสลิปอัตโนมัติต้องเชื่อม API ก่อน จึงจะยืนยันการชำระเงินได้')">ส่งสลิปตรวจสอบ</button>
+      <p>ระบบยังไม่ยืนยันการชำระเงินจนกว่าจะตรวจสอบสลิปกับผู้ให้บริการจริง</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">AGROVERSE 🌱</div>
+  <p>Smart Agriculture Platform</p>
+  <p>© 2026 AGROVERSE. All Rights Reserved.</p>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+  function go(id) {
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  }
+
+  function notify(message) {
+    const t = document.getElementById('toast');
+    t.textContent = message;
+    t.style.display = 'block';
+    setTimeout(() => t.style.display = 'none', 3000);
+  }
+
+  function askAI() {
+    const q = document.getElementById('question').value.trim();
+    if (!q) return notify('กรุณาพิมพ์คำถามก่อน');
+    document.getElementById('ai-result').textContent =
+      'รับคำถามแล้ว แต่ต้องเชื่อมต่อ AI API ก่อนจึงจะตอบได้';
+  }
+
+  function getLocation() {
+    const result = document.getElementById('location-result');
+    if (!navigator.geolocation) {
+      result.textContent = 'อุปกรณ์ไม่รองรับ GPS';
+      return;
+    }
+    result.textContent = 'กำลังตรวจสอบตำแหน่ง...';
+    navigator.geolocation.getCurrentPosition(
+      p => result.textContent =
+        'ละติจูด: ' + p.coords.latitude +
+        ' | ลองจิจูด: ' + p.coords.longitude,
+      () => result.textContent = 'ไม่สามารถเข้าถึงตำแหน่งได้'
+    );
+  }
+
+  function copyWallet() {
+    navigator.clipboard.writeText('0909507195')
+      .then(() => notify('คัดลอกเบอร์ Wallet แล้ว'))
+      .catch(() => notify('ไม่สามารถคัดลอกได้'));
+  }
+</script>
+
+</body>
+</html>
