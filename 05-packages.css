@@ -1,0 +1,5 @@
+/* ---------- ตารางแพ็กเกจ ---------- */
+.cmp { width: 100%; min-width: 540px; border-collapse: separate; border-spacing: 0; table-layout: fixed; } .cmp th, .cmp td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: middle; } .cmp th[scope=row] { text-align: left; color: var(--muted); font-weight: 500; width: 26%; font-size: .88rem; }
+.cmp thead th { vertical-align: bottom; } .pn { font-family: var(--f-head); font-weight: 700; letter-spacing: .03em; } .pp { font-family: var(--f-head); font-size: 1.5rem; font-weight: 700; color: var(--accent-text); margin: 2px 0 6px; } .pp small { font-size: .5em; font-weight: 400; }
+.cmp .cur { background: var(--accent-a); } .perks { list-style: none; margin: 0; padding: 0; font-size: .85rem; } .perks li { margin-bottom: 4px; } .cmp small { color: var(--muted); } .ctar td, .ctar th { border-bottom: 0; }
+.cur-plan .kv dd { font-size: .95rem; }
